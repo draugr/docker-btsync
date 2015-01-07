@@ -26,5 +26,5 @@ fi
 chown -R btsync:btsync /data /btsync /btsync-override
 su btsync << EOF
 cd "$BTSYNC"
-/btsync --nodaemon --config /data/btsync.conf
+btsync --nodaemon --config /data/btsync.conf
 EOF
