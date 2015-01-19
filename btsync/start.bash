@@ -5,6 +5,7 @@ OVERRIDE="/btsync-override"
 
 CONFIG="btsync.conf"
 SHARES="shares"
+MISCFILES="misc"
 ls -la
 # Symlink data directory.
 mkdir -p "$OVERRIDE/$SHARES"
@@ -12,6 +13,14 @@ rm -fr "$SHARES"
 ln -s "$OVERRIDE/$SHARES" "$SHARES"
 echo "symlinked datadir:"
 echo "$OVERRIDE/$SHARES -> $SHARES"
+
+# Symlink MISCFILES directory.
+mkdir -p "$OVERRIDE/$MISCFILES"
+rm -fr "$MISCFILES"
+ln -s "$OVERRIDE/$MISCFILES" "$MISCFILES"
+echo "symlinked MISCFILES:"
+echo "$OVERRIDE/$MISCFILES -> $MISCFILES"
+
 
 # Symlink config file.
 if [[ -f "$OVERRIDE/$CONFIG" ]]; then
