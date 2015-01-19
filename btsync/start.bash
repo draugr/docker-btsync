@@ -5,8 +5,7 @@ OVERRIDE="/btsync-override"
 
 CONFIG="btsync.conf"
 SHARES="shares"
-echo "declared variables"
-
+ls -la
 # Symlink data directory.
 mkdir -p "$OVERRIDE/$SHARES"
 rm -fr "$SHARES"
@@ -21,10 +20,11 @@ if [[ -f "$OVERRIDE/$CONFIG" ]]; then
   echo "config overridden:"
   echo "$OVERRIDE/$CONFIG -> $CONFIG"
 fi
-
+ls -la
 # Start btsync
 chown -R btsync:btsync /bitsync /btsync-override
-echo "chownd"
+echo "chownd:"
+ls -la
 su btsync << EOF
 echo "switched user to btsync"
 cd "$BITSYNC"
