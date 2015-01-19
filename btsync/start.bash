@@ -31,5 +31,5 @@ cd "$BITSYNC"
 pwd
 ls -la
 echo "starting deamon"
-/btsync --nodaemon --config /btsync.conf
+/btsync --nodaemon --config /bitsync/btsync.conf
 EOF
