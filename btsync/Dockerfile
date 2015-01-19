@@ -8,7 +8,7 @@ RUN tar xf /btsync.tar.gz && \
 ADD start.bash /start.bash
 WORKDIR /bitsync
 
-VOLUME ["/data","/btsync-override"]
+VOLUME ["/btsync-override"]
 
 CMD ["bash", "/start.bash"]
 

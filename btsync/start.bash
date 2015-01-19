@@ -29,6 +29,7 @@ su btsync << EOF
 echo "switched user to btsync"
 cd "$BITSYNC"
 pwd
+ls -la
 echo "starting deamon"
-/btsync --nodaemon --config /data/btsync.conf
+/btsync --nodaemon --config /btsync.conf
 EOF
