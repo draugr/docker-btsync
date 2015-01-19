@@ -23,7 +23,7 @@ if [[ -f "$OVERRIDE/$CONFIG" ]]; then
 fi
 
 # Start btsync
-chown -R btsync:btsync /data /bitsync /btsync-override
+chown -R btsync:btsync /bitsync /btsync-override
 echo "chownd"
 su btsync << EOF
 echo "switched user to btsync"
@@ -31,5 +31,5 @@ cd "$BITSYNC"
 pwd
 ls -la
 echo "starting deamon"
-/btsync --nodaemon --config /bitsync/btsync.conf
+/bitsync/btsync --nodaemon --config /bitsync/btsync.conf
 EOF
