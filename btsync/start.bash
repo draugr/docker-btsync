@@ -5,27 +5,27 @@ OVERRIDE="/btsync-override"
 
 CONFIG="btsync.conf"
 SHARES="shares"
-echo -n "declared variables"
-
-cd "$BTSYNC"
+echo "declared variables"
 
 # Symlink data directory.
 mkdir -p "$OVERRIDE/$SHARES"
 rm -fr "$SHARES"
 ln -s "$OVERRIDE/$SHARES" "$SHARES"
-echo -n "symlinked datadir"
+echo "symlinked datadir"
 
 # Symlink config file.
 if [[ -f "$OVERRIDE/$CONFIG" ]]; then
   rm -f "$CONFIG"
   ln -s "$OVERRIDE/$CONFIG" "$CONFIG"
 fi
-echo -n "symlinked config"
+echo "symlinked config"
 
 # Start btsync
 chown -R btsync:btsync /data /bitsync /btsync-override
-echo -n "chownd"
+echo "chownd"
 su btsync << EOF
 cd "$BITSYNC"
+pwd
+echo "starting deamon"
 /btsync --nodaemon --config /data/btsync.conf
 EOF
