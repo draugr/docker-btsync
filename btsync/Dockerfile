@@ -12,4 +12,4 @@ VOLUME ["/btsync-override"]
 
 CMD ["bash", "/start.bash"]
 
-EXPOSE 3369/udp
+EXPOSE 3369

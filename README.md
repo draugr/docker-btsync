@@ -10,5 +10,3 @@ entralized, always on -client for bt-sync shares.
 ## TODO:
 * Make it work, by being able to blindly mirror one existing share.
 * Make it work with multiple blind shares
-
-
